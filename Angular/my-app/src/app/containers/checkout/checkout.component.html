@@ -1,0 +1,28 @@
+<button type="button" (click)="loadData()">Load</button>
+<button type="button" (click)="loadData()">Patch</button>
+<form [formGroup]="checkoutForm" (submit)="saveData()" errorTailor>
+    <label for>Name</label>
+    <input type ="text" formControlName="name" />
+
+    <!-- <div  *ngIf="checkoutForm.get('name')?.touched">
+        <small *ngIf="checkoutForm.get('name')?.hasError('required')">Name is required</small>
+        <small *ngIf="checkoutForm.get('name')?.hasError('minlength')">Min 4 character is required.</small>
+    </div> -->
+    <label for>Email</label>
+    <input type ="text" formControlName="email" />
+
+    <div formGroupName="address">
+        <input type="text"  formControlName="city"/>
+        <input type="text"  formControlName="pincode"/>
+        <small *ngIf="checkoutForm.get('address')?.get('pincode')?.hasError('zipcode')"></small>>
+    </div>
+
+    <button type="submit" > Submit</button>
+</form>
+
+<pre>
+    {{checkoutForm.value | json}}
+</pre>
+<pre>
+    {{checkoutForm.get("name")?.errors | json}}
+</pre>
