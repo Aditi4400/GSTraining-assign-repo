@@ -11,7 +11,14 @@ import { ProductPriceComponent } from './components/product-price/product-price.
 import{ ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './containers/checkout/checkout.component';
 import {errorTailorImports , provideErrorTailorConfig} from '@ngneat/error-tailor';
-import { CurrencyComponent } from './components/currency/currency.component'
+import { CurrencyComponent } from './components/currency/currency.component';
+import { NumbersOnlyDirective } from './directives/numbers-only.directive';
+import { ImgFallbackDirective } from './directives/img-fallback.directive';
+import { HttpClientModule} from '@angular/common/http';
+import { GithubSearchComponent } from './containers/github-search/github-search.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrorPageComponent } from './containers/error-page/error-page.component';
+import { ProductDetailComponent } from './containers/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +30,22 @@ import { CurrencyComponent } from './components/currency/currency.component'
     ConversionPipe,
     ProductPriceComponent,
     CheckoutComponent,
-    CurrencyComponent
+    CurrencyComponent,
+    NumbersOnlyDirective,
+    ImgFallbackDirective,
+    GithubSearchComponent,
+    ErrorPageComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     errorTailorImports,
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [
+
     provideErrorTailorConfig({
       errors: {
         useValue: {

@@ -1,8 +1,31 @@
-<h1>App Component</h1>
+<!-- <h1>App Component</h1> -->
 <!-- <app-demo></app-demo>
 <app-product></app-product> -->
-<!-- <app-product-list></app-product-list> -->
+<!-- <app-product-list ></app-product-list> -->
 
 <!-- <app-checkout></app-checkout> -->
-<app-currency (currencySelected)="currFunc($event)"></app-currency>
-<app-product-list [selectedCode]="currValue" ></app-product-list>
+<!-- <input type="text" appNumbersOnly/>
+<input type="text" appNumbersOnly="4"> -->
+<!-- <input type="text" [appNumbersOnly]="count" /> -->
+<!-- <app-currency (currencySelected)="currFunc($event)"></app-currency> -->
+<!-- <app-github-search></app-github-search>
+<app-product-list  ></app-product-list> -->
+
+
+<ul>
+ <!-- href will reload the page everytime so we use routerlink. -->
+    <!-- <li><a href="/">Home</a></li> -->
+
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/products">Products</a></li>
+    <li><a routerLink="/checkout">Checkout</a></li>
+
+</ul>
+<div class =" container-fluid bg-light">
+    <app-currency ></app-currency>
+    <router-outlet></router-outlet>
+</div> 
+
+
+
+
