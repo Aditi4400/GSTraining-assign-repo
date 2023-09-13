@@ -1,0 +1,16 @@
+.heading{
+    color: crimson;
+    justify-content: center;
+    padding-block: 100px;
+    padding-inline: 500px;
+    font-size: xxx-large;
+    font-style: italic;
+}
+.image-cls{
+    margin-left:400px;
+
+}
+.homemain{
+   justify-content: center; 
+   
+}
