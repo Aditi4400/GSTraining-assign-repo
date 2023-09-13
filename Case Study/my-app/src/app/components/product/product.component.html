@@ -1,0 +1,15 @@
+<div >
+    <img style="max-height: 300px; margin-top: 4%;" appImgFallback [src]="data.productImage" [routerLink]="['/detail', data.productId]" [queryParams]="{'size': 'm', rating: 4}"/>
+    <h4>{{data.productName | uppercase}}</h4>
+    <app-product-price
+     [price]="data.productPrice"
+     [sellingPrice]="data.productSalePrice"
+     [code]="code"
+    ></app-product-price>
+    <!-- <h5>{{data.productPrice | currency: "INR": "code": "2.1-1" }}</h5> -->
+    <!-- <h5>{{data.productPrice | conversion: code | currency: code}}</h5> -->
+    <button style="width: 100%; color: white; background-color: #0066ff; padding-block: 8px;font-size:medium; border: none; border-radius: 6px;" (click)="notifyParent()" *ngIf="data.productStock > 1; else stock">Add to cart</button>
+</div>
+<ng-template #stock>
+    Out of Stock
+</ng-template>

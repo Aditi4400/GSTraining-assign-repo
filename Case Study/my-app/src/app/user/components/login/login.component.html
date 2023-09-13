@@ -1,0 +1,13 @@
+
+<form [formGroup]="loginForm" (submit)="login()">
+    <label for>email</label>
+    <input type="text" formControlName="email"/>
+  
+    <label for>Password</label>
+    <input type="text" formControlName="password"/>
+    
+     
+    <button type="submit">Submit</button>
+    
+</form>
+

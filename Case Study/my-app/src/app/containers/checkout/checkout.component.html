@@ -1,0 +1,34 @@
+<button type="button" (click)="loadData()">Load</button>
+<button type="button" (click)="patchData()">Patch</button>
+<form [formGroup]="checkoutForm" errorTailor>
+    <label for>Name</label>
+    <input type="text" formControlName="name"/>
+    <!-- <div *ngIf="checkoutForm.get('name')?.touched">
+        <small *ngIf="checkoutForm.get('name')?.hasError('required')">
+                Name is required
+        </small>
+        <small *ngIf="checkoutForm.get('name')?.hasError('minlength')">
+            Min 4 characters required
+    </small>
+    </div> -->
+    <label for>Email</label>
+    <input type="text" formControlName="email"/>
+    <div formArrayName="address">
+        <!-- <label>Address</label> -->
+        <button type="button" (click)="addAddress()">Add</button>
+        <div 
+            [formGroupName]="i"
+            *ngFor="let ctrl of addressObj.controls; let i = index">
+        <input type="text" formControlName="city"/>
+        <input type="text" formControlName="pincode"/>
+        <button type="button" (click)="removeAddress(i)">Submit</button>
+        <!-- <small *ngIf="checkoutForm.get('address')?.get('pincode')?.hasError('zipcode')">Invalid pincode</small> -->
+    </div>
+    </div>
+    <button type="submit">Submit</button>
+    
+</form>
+
+<pre>
+    {{checkoutForm.value | json}}
+</pre>

@@ -1,0 +1,11 @@
+<div *ngFor="let val of item ">
+    <img [src]="val.product.productImage"/>
+    <div style="font-weight: bold; font-size: large;">{{val.product.productName | uppercase}}</div>
+    <div>
+        <div>Quantity :</div>
+        <input type="number" [defaultValue]="val.count" (input)="updateQuantity(val)">
+        <div>Price: {{val.product.productPrice}} </div>
+        <button class="rem-btn"(click)="removeFromCart(val)">Remove</button>
+    </div>
+    
+</div>

@@ -1,0 +1,5 @@
+<button (click)="authService.logout()" *ngIf="user$ |async; else logout" style="padding-inline: 6px; padding-block: 3px; background-color: gray; color: white; border: 2px solid rgb(81, 80, 80) ; border-radius: 6px;">Logout</button>
+<ng-template #logout>
+    <a routerLink="users/login" >Login</a>
+
+</ng-template>

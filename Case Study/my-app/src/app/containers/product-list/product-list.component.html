@@ -1,0 +1,15 @@
+<!-- <p>product-list works!</p> -->
+<input class="search_btn" type="text" placeholder="Enter to search" [(ngModel)]="filterString" />
+<button class="sort-price-btn" (click)="priceSort($event)">Sort by Price</button>
+ <button class="sort-name-btn" (click)="nameSort($event)">Sort by Name</button>
+ 
+<div  style="display: flex; flex-wrap: wrap;" class="row" *ngIf="curr$ | async as mycode">
+<div style="width: 25%; display: flex;justify-content: center;" *ngFor="let item of product$ | async | pagination:currentPage:20 | filter:filterString | sortby:sortString ">
+<app-product [code]="mycode" [data]="item" (btnClick)="addItem($event)" ></app-product>
+</div>
+</div>
+
+<div class="pagination" >
+    <button class="prev-btn"    (click)="previousPage()">Previous</button>
+    <button class="next-btn" (click)="nextPage()">Next</button>
+</div>

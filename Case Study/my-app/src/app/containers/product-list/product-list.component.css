@@ -1,0 +1,15 @@
+.pagination{
+    display: flex;
+    justify-content: center;
+    padding-block: 30px;
+}
+.prev-btn{
+    padding-inline: 20px;
+    padding-block: 5px;
+    font-size: 20px;
+}
+.next-btn{
+    padding-inline: 35px;
+    padding-block: 5px;
+    font-size: 20px;
+}
